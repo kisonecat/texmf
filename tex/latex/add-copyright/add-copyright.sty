@@ -1,0 +1,23 @@
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+\newcommand\BackgroundPicture[1]{%
+  \setlength{\unitlength}{1pt}%
+  \put(0,792){%
+  \parbox[t][\paperheight]{\paperwidth}{%
+     \vfill
+     \centering\includegraphics{#1}
+     \vfill
+}}} %
+\AddToShipoutPicture{\BackgroundPicture{copyright.pdf}}
+
+% Include XMP information describing the rights
+%\ifpdf
+%  \ifxetex
+    %but not if we're using XeTeX (xmpincl only works with pdftex)
+%  \else
+    \usepackage{xmpincl}
+    \includexmp{metadata}
+    \usepackage{xmpincl}
+% \fi
+%\fi
